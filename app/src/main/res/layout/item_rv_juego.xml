@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/morado_75">
+
+    <ImageView
+        android:id="@+id/ivItemImagen"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:contentDescription="@string/foto_del_juego"
+        app:srcCompat="@drawable/imagen_no_disponible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvItemIdentificador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/morado_25"
+            android:hint="@string/identificador"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColorHint="#212121"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvItemPlataforma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/morado_25"
+            android:hint="@string/plataforma"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColorHint="#212121"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvItemNombreJuego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/morado_25"
+            android:hint="@string/nombre"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColorHint="#212121"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvItemGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/morado_25"
+            android:hint="@string/g_nero"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColorHint="#212121"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvItemPrecioVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/morado_25"
+            android:hint="@string/precio"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColorHint="#212121"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

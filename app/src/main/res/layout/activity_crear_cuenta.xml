@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.vistas.CrearCuentaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/morado_50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/morado_50"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTituloCrearCuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="64dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/creaci_n_de_cuenta_nueva"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/etNuevoCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:hint="@string/tu_nombre_usuario_email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#3E2723" />
+
+            <EditText
+                android:id="@+id/etNuevoPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:hint="@string/tu_contrase_a"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#3E2723" />
+
+            <EditText
+                android:id="@+id/etNuevoRepetirPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:hint="@string/confirmar_contrase_a"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#3E2723" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCrearCuenta"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/morado_100"
+                    android:onClick="registrarCuenta"
+                    android:text="@string/crear_cuenta"
+                    android:textColor="#EA80FC" />
+
+                <Button
+                    android:id="@+id/btnSalirCrearCuenta"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/morado_100"
+                    android:onClick="salirDeCrearCuenta"
+                    android:text="@string/volver"
+                    android:textColor="#EA80FC" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

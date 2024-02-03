@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es.carlosmilena.pm_carlosmilena_jdbc_mysql.iml" filepath="$PROJECT_DIR$/.idea/modules/es.carlosmilena.pm_carlosmilena_jdbc_mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/es.carlosmilena.pm_carlosmilena_jdbc_mysql.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

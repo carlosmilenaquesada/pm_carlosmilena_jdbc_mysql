@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/morado_50"
+    tools:context=".activities.vistas.MostrarCatalogoActivity">
+
+    <TextView
+        android:id="@+id/tvTituloCatalogoJuegos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/cat_logo_de_juegos"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBuscarJuego"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/etBuscarJuego"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
+        android:hint="@string/nombre_del_juego_buscado"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#3E2723"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscarJuego"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBuscarJuego" />
+
+    <Button
+        android:id="@+id/btnBuscarJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/morado_100"
+        android:onClick="buscarJuego"
+        android:text="@string/buscar"
+        app:layout_constraintBottom_toTopOf="@+id/rvListaJuegos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etBuscarJuego"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCatalogoJuegos" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaJuegos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscarJuego" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/morado_100"
+        android:onClick="volver"
+        android:text="@string/volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rvListaJuegos"
+        app:layout_constraintTop_toBottomOf="@+id/rvListaJuegos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
