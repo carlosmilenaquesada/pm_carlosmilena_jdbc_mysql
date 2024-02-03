@@ -18,7 +18,6 @@ public class ConfiguracionDB{
 	public static final String URLMYSQL =
 			"jdbc:mysql://" + HOSTDB + ":" + PUERTOMYSQL + "/" + NOMBREDB + OPCIONESHORA;
 
-	//----------------------------------------------------------....
 	public static Connection conectarConBaseDeDatos(){
 		try{
 			Connection conexion = DriverManager.getConnection(URLMYSQL, USUARIODB, CLAVEDB);
@@ -27,5 +26,4 @@ public class ConfiguracionDB{
 			return null;
 		}
 	}
-	//-----------------------------------------------------------
 }

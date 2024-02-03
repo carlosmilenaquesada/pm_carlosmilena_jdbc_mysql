@@ -9,19 +9,22 @@ import java.util.ArrayList;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.controladores.StringArrayController;
 
 public class Herramientas{
-	public static void rellenarSpinnerConInfoBd(Context contexto, ArrayAdapter<String> adapter
-			, String nombreTablaDelContenidoDB, String nombreColumnaContenidoDB/*,
-												String nombreArchivoPhp*/){
+	public static void rellenarSpinnerConInfoBd(Context contexto, ArrayAdapter<String> adapter,
+												String nombreTablaDelContenidoDB,
+												String nombreColumnaContenidoDB){
+		//NUEVO
 		ArrayList<String> elementos =
 				StringArrayController.obtenerStringArrayController(nombreTablaDelContenidoDB,
 						nombreColumnaContenidoDB);
-
 		if(elementos == null){
-			Toast.makeText(contexto, "Los valores de " +nombreTablaDelContenidoDB + " no se han podido cargar", Toast.LENGTH_SHORT).show();
+			Toast.makeText(contexto, "Los valores de " + nombreTablaDelContenidoDB +
+									 " no se han podido cargar", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		adapter.addAll(elementos);
 		adapter.notifyDataSetChanged();
+
+		//VIEJO
 		/*StringRequest request = new StringRequest(Request.Method.POST,
 				ConfiguracionDB.DIRECCION_URL_RAIZ +
 				nombreArchivoPhp, new Response.Listener<String>(){

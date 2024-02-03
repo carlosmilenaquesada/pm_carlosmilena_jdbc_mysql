@@ -15,11 +15,12 @@ import es.carlosmilena.pm_carlosmilena_jdbc_mysql.clases.Usuario;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.controladores.UsuarioController;
 
 public class AutenticacionActivity extends AppCompatActivity{
-	public static final String EMAIL_KEY = "com.example.pm_mysql.autenticacionactivity.email";
-	public static final String PASSWORD_KEY =
-			"com.example.pm_mysql.autenticacionactivity" + ".password";
-	public static final String SHARED_PREFS =
-			"com.example.pm_mysql.autenticacionactivity" + ".shared_prefs";
+	public static final String EMAIL_KEY =
+			"es.carlosmilena.pm_carlosmilena_jdbc_mysql" + ".autenticacionactivity.email";
+	public static final String PASSWORD_KEY = "es.carlosmilena.pm_carlosmilena_jdbc_mysql" +
+											  ".autenticacionactivity.password";
+	public static final String SHARED_PREFS = "es.carlosmilena.pm_carlosmilena_jdbc_mysql" +
+											  ".autenticacionactivity.shared_prefs";
 	EditText etCorreo;
 	EditText etPassword;
 	SharedPreferences sharedpreferences;
@@ -56,7 +57,6 @@ public class AutenticacionActivity extends AppCompatActivity{
 		}
 		//NUEVO
 		Usuario usuario = UsuarioController.obtenerUsuarioController(email, password);
-
 		if(usuario == null){
 			Toast.makeText(AutenticacionActivity.this, "Usuario o password incorrectos",
 					Toast.LENGTH_LONG).show();

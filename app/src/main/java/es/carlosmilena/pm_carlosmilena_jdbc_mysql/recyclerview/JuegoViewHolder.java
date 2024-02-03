@@ -9,19 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-
+import es.carlosmilena.pm_carlosmilena_jdbc_mysql.R;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.activities.vistas.ModificarJuegoActivity;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.clases.Juego;
-
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.utilidades.ImagenesBlobBitmap;
-import es.carlosmilena.pm_carlosmilena_jdbc_mysql.R;
 
 public class JuegoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-	public static final String EXTRA_MODIFICAR_JUEGO =
-			"com.example.pm_mysql.recyclerview.juegoviewholder.juego";
-	public static final String EXTRA_MODIFICAR_IMAGEN =
-			"com.example.pm_mysql.recyclerview.juegoviewholder.fotobytes";
+	public static final String EXTRA_MODIFICAR_JUEGO = "es.carlosmilena.pm_carlosmilena_jdbc_mysql" +
+													   ".recyclerview.juegoviewholder.juego";
+	public static final String EXTRA_MODIFICAR_IMAGEN = "es.carlosmilena" +
+														".pm_carlosmilena_jdbc_mysql" +
+														".juegoviewholder.fotobytes";
 	private final TextView tvItemIdentificador;
 	private final TextView tvItemPlataforma;
 	private final TextView tvItemNombreJuego;

@@ -22,25 +22,18 @@ public class ImagenController{
 		ExecutorService es = Executors.newSingleThreadExecutor();
 		es.submit(t);
 		try{
-			// Especifica un tiempo de espera razonable (por ejemplo, 5 segundos)
 			imagen = (Imagen) t.get(5000, TimeUnit.MILLISECONDS);
 		}catch(ExecutionException e){
-			// Maneja la excepción de ejecución
 			e.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al obtener imagen: " + e.getMessage());
 		}catch(InterruptedException | TimeoutException e){
-			// Maneja la excepción de interrupción o tiempo de espera agotado
 			e.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al obtener imagen: " + e.getMessage());
 		}finally{
-			// Intenta detener el servicio de ejecución
 			es.shutdown();
 		}
 		return imagen;
 	}
-	//------------------------------------------------------------------------------------------
 
 	public static boolean insertarImagen(Imagen imagen){
 		FutureTask t = new FutureTask(new TareaInsertarImagen(imagen));
@@ -48,70 +41,52 @@ public class ImagenController{
 		es.submit(t);
 		boolean insercionOK = false;
 		try{
-			// Especifica un tiempo de espera razonable (por ejemplo, 5 segundos)
 			insercionOK = (boolean) t.get(5000, TimeUnit.MILLISECONDS);
 		}catch(ExecutionException e){
-			// Maneja la excepción de ejecución
 			e.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al insertar la imagen: " + e.getMessage());
 		}catch(InterruptedException | TimeoutException e1){
-			// Maneja la excepción de interrupción o tiempo de espera agotado
 			e1.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al insertar la imagen: " + e1.getMessage());
 		}finally{
-			// Intenta detener el servicio de ejecución
 			es.shutdown();
 		}
 		return insercionOK;
 	}
-	//------------------------------------------------------------------------------------------
-	public static boolean borrarImagen(String idImagen)
-	{
+
+	public static boolean borrarImagen(String idImagen){
 		FutureTask t = new FutureTask(new TareaBorrarImagen(idImagen));
 		ExecutorService es = Executors.newSingleThreadExecutor();
 		es.submit(t);
 		boolean borradoOK = false;
-		try {
+		try{
 			borradoOK = (boolean) t.get(5000, TimeUnit.MILLISECONDS);
-		} catch (ExecutionException e) {
-			// Maneja la excepción de ejecución
+		}catch(ExecutionException e){
 			e.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al borrar la imagen: " + e.getMessage());
-		} catch (InterruptedException | TimeoutException e1) {
-			// Maneja la excepción de interrupción o tiempo de espera agotado
+		}catch(InterruptedException | TimeoutException e1){
 			e1.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al borrar la imagen: " + e1.getMessage());
-		}  finally {
-			// Intenta detener el servicio de ejecución
+		}finally{
 			es.shutdown();
 		}
 		return borradoOK;
-
 	}
-	//------------------------------------------------------------------------------------------
-	public static boolean actualizarImagen(Imagen imagenNew, String idImagenOld) {
+
+	public static boolean actualizarImagen(Imagen imagenNew, String idImagenOld){
 		FutureTask t = new FutureTask(new TareaActualizarImagen(imagenNew, idImagenOld));
 		ExecutorService es = Executors.newSingleThreadExecutor();
 		es.submit(t);
 		boolean actualizadoOK = false;
-		try {
+		try{
 			actualizadoOK = (boolean) t.get(5000, TimeUnit.MILLISECONDS);
-		} catch (ExecutionException e) {
-			// Maneja la excepción de ejecución
+		}catch(ExecutionException e){
 			e.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al actualizar la imagen: " + e.getMessage());
-		} catch (InterruptedException | TimeoutException e1) {
-			// Maneja la excepción de interrupción o tiempo de espera agotado
+		}catch(InterruptedException | TimeoutException e1){
 			e1.printStackTrace();
-			// Registra el error de alguna manera
 			Log.i("sql", "Error al actualizar ela imagen: " + e1.getMessage());
-		}  finally {
-			// Intenta detener el servicio de ejecución
+		}finally{
 			es.shutdown();
 		}
 		return actualizadoOK;

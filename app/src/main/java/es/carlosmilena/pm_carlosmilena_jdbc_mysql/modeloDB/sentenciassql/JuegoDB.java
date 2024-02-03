@@ -13,7 +13,6 @@ import es.carlosmilena.pm_carlosmilena_jdbc_mysql.clases.Juego;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.modeloDB.conexion.ConfiguracionDB;
 
 public class JuegoDB{
-	//-------------------------------------------------------------------------------
 	public static ArrayList<Juego> obtenerJuegos(){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){
@@ -22,7 +21,8 @@ public class JuegoDB{
 		ArrayList<Juego> juegos = new ArrayList<>();
 		try{
 			Statement sentencia = conexion.createStatement();
-			String ordenSQL = "SELECT * FROM carlosmilena_juegos ORDER BY CONVERT(identificador, SIGNED);";
+			String ordenSQL = "SELECT * FROM carlosmilena_juegos ORDER BY CONVERT(identificador, " +
+							  "SIGNED);";
 			ResultSet resultado = sentencia.executeQuery(ordenSQL);
 			while(resultado.next()){
 				String identificador = resultado.getString("identificador");
@@ -44,7 +44,6 @@ public class JuegoDB{
 		}
 	}
 
-	//-------------------------------------------------------------------------------
 	public static boolean guardarJuego(Juego juego){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){
@@ -72,7 +71,6 @@ public class JuegoDB{
 		}
 	}
 
-	//------------------------------------------------------------
 	public static boolean borrarJuego(String idJuego){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){
@@ -94,7 +92,7 @@ public class JuegoDB{
 			return false;
 		}
 	}
-	//----------------------------------------------------------------------------------------------
+
 	public static boolean actualizarJuego(Juego juegoNew, String idJuegoOld){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){
@@ -102,7 +100,8 @@ public class JuegoDB{
 		}
 		try{
 			String ordensql = "UPDATE carlosmilena_juegos SET identificador = ?,plataforma = ?, " +
-							  "nombrejuego = ?, genero = ?, preciojuego = ? WHERE identificador =" +
+							  "nombrejuego = ?, genero = ?, preciojuego = ? WHERE identificador " +
+							  "=" +
 							  " ?";
 			PreparedStatement pst = conexion.prepareStatement(ordensql);
 			pst.setString(1, juegoNew.getIdentificador());
@@ -123,5 +122,4 @@ public class JuegoDB{
 			return false;
 		}
 	}
-
 }

@@ -1,6 +1,5 @@
 package es.carlosmilena.pm_carlosmilena_jdbc_mysql.activities.vistas;
 
-
 import static es.carlosmilena.pm_carlosmilena_jdbc_mysql.activities.vistas.AutenticacionActivity.EMAIL_KEY;
 import static es.carlosmilena.pm_carlosmilena_jdbc_mysql.activities.vistas.AutenticacionActivity.SHARED_PREFS;
 
@@ -22,23 +21,25 @@ public class MenuGeneralActivity extends AppCompatActivity{
 	@Override
 	protected void onStart(){
 		super.onStart();
-		SharedPreferences sharedpreferences =
-				getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+		SharedPreferences sharedpreferences = getSharedPreferences(SHARED_PREFS,
+				Context.MODE_PRIVATE);
 		String email = sharedpreferences.getString(EMAIL_KEY, null);
 		String password = sharedpreferences.getString(AutenticacionActivity.PASSWORD_KEY, null);
 		if(email == null || password == null){
-			Toast.makeText(getApplicationContext(), "No tienes permiso para esta sección", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "No tienes permiso para esta sección",
+					Toast.LENGTH_SHORT).show();
 			startActivity(new Intent(getApplicationContext(), AutenticacionActivity.class));
 		}
 	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu_general);
 		tvSaludoAlUsuario = (TextView) findViewById(R.id.tvSaludoAlUsuario);
 		String usuario =
-				getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE).getString(EMAIL_KEY,
-						"anónimo");
+				getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE).getString(EMAIL_KEY, "an" +
+																							  "ónimo");
 		tvSaludoAlUsuario.setText(getString(R.string.saludo, usuario));
 	}
 

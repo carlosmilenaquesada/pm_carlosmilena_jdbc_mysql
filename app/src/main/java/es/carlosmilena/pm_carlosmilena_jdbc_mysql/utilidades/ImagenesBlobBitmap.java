@@ -111,15 +111,13 @@ public class ImagenesBlobBitmap{
 		return null;
 	}
 
-
-	public static String  byte_to_string(byte[] bm) {
+	public static String byte_to_string(byte[] bm){
 		String encode = Base64.encodeToString(bm, Base64.DEFAULT);
 		return encode;
 	}
 
-	public static byte[]  string_to_byte(String imagen) {
-
-		byte[] decodedString = Base64.decode(imagen,Base64.DEFAULT);
+	public static byte[] string_to_byte(String imagen){
+		byte[] decodedString = Base64.decode(imagen, Base64.DEFAULT);
 		return decodedString;
 	}
 }

@@ -16,7 +16,7 @@ public class ImagenDB{
 		if(conexion == null){
 			return null;
 		}
-		Imagen imagen =null;
+		Imagen imagen = null;
 		try{
 			String ordenSQL = "SELECT * FROM carlosmilena_imagenes WHERE (`idimagen` = ?);";
 			PreparedStatement pst = conexion.prepareStatement(ordenSQL);
@@ -37,7 +37,6 @@ public class ImagenDB{
 		}
 	}
 
-	//-------------------------------------------------------------------------------
 	public static boolean guardarImagen(Imagen imagen){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){
@@ -61,7 +60,6 @@ public class ImagenDB{
 		}
 	}
 
-	//------------------------------------------------------------
 	public static boolean borrarImagen(String idDeLaImagen){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){
@@ -84,7 +82,6 @@ public class ImagenDB{
 		}
 	}
 
-	//----------------------------------------------------------------------------------------------
 	public static boolean actualizarImagen(Imagen imagenNew, String idImagenOld){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){

@@ -1,7 +1,5 @@
 package es.carlosmilena.pm_carlosmilena_jdbc_mysql.activities.vistas;
 
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.R;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.clases.Juego;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.controladores.JuegoController;

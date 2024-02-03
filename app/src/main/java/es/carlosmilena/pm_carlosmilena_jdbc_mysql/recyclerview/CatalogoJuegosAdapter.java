@@ -58,10 +58,10 @@ public class CatalogoJuegosAdapter extends RecyclerView.Adapter<JuegoViewHolder>
 		holder.getTvItemGenero().setText(j.getGenero());
 		holder.getTvItemPrecioVenta().setText(String.valueOf(j.getPrecioJuego()));
 		String idimagen = j.getIdentificador();
-		descargarImagen(idimagen, holder.getIvItemImagen()/*, contexto*/);
+		descargarImagen(idimagen, holder.getIvItemImagen());
 	}
 
-	private void descargarImagen(String idimagen, ImageView imageView/*, Context contexto*/){
+	private void descargarImagen(String idimagen, ImageView imageView){
 		//NUEVO
 		Imagen imagen = ImagenController.obtenerImagenController(idimagen);
 		if(imagen == null){

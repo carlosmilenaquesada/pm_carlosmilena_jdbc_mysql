@@ -11,13 +11,6 @@ import java.util.ArrayList;
 import es.carlosmilena.pm_carlosmilena_jdbc_mysql.modeloDB.conexion.ConfiguracionDB;
 
 public class StringArrayDB{
-	//ALGUNOS ELEMENTOS DE LA BASE DE DATOS, NO NECESITAN SER TRAIDOS Y TRATADOS COMO UNA CLASE, YA
-	//QUE NO VAN A SUFRIR NINGÚN TIPO DE MODIFICACIÓN, INSERCIÓN O BORRADO, PARA ELLO HE CREADO
-	//ESTA CLASE, PARA QUE SOLAMENTE ME TRAIGA UNA COLECCIÓN DE ELEMENTOS EN FORMA DE ARRAY DE
-	// STRING.
-	//POR EJEMPLO, PARA LAS CONSOLAS, GÉNEROS, ETC. CUYA EXISTENCIA SOLO SIRVE PARA RELLENAR UN
-	// SPINNER
-	//PARA DAR UN VALOR A UN ATRIBUTO DE LA CLASE JUEGO.
 	public static ArrayList<String> obtenerStringArray(String tabla, String columna){
 		Connection conexion = ConfiguracionDB.conectarConBaseDeDatos();
 		if(conexion == null){

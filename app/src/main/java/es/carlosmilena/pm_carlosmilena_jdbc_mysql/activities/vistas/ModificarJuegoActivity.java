@@ -68,8 +68,7 @@ public class ModificarJuegoActivity extends AppCompatActivity implements Adapter
 		Intent intent = getIntent();
 		if(intent != null){
 			juego = (Juego) intent.getParcelableExtra(JuegoViewHolder.EXTRA_MODIFICAR_JUEGO);
-			System.out.println("mi juego"+ juego);
-
+			System.out.println("mi juego" + juego);
 			byte[] fotobinaria =
 					(byte[]) intent.getByteArrayExtra(JuegoViewHolder.EXTRA_MODIFICAR_IMAGEN);
 			Bitmap fotobitmap = ImagenesBlobBitmap.bytes_to_bitmap(fotobinaria, 500, 500);
@@ -81,8 +80,7 @@ public class ModificarJuegoActivity extends AppCompatActivity implements Adapter
 		adapterPlataforma = new ArrayAdapter<>(this, R.layout.spinner_cerrado);
 		adapterPlataforma.setDropDownViewResource(R.layout.spinner_desplegado);
 		Herramientas.rellenarSpinnerConInfoBd(this, adapterPlataforma, "carlosmilena_consolas",
-				"nombreconsola"/*
-				, "/obtener-plataformas.php"*/);
+				"nombreconsola");
 		spModificarJuegoPlataforma.setAdapter(adapterPlataforma);
 		spModificarJuegoPlataforma.setOnItemSelectedListener(this);
 		edtModificarNombreJuego = (EditText) findViewById(R.id.edtModificarJuegoNombreJuego);
@@ -95,8 +93,7 @@ public class ModificarJuegoActivity extends AppCompatActivity implements Adapter
 		adapterGenero = new ArrayAdapter<>(this, R.layout.spinner_cerrado);
 		adapterGenero.setDropDownViewResource(R.layout.spinner_desplegado);
 		Herramientas.rellenarSpinnerConInfoBd(this, adapterGenero, "carlosmilena_generos",
-				"nombregenero"/*,
-				"/obtener-generos.php"*/);
+				"nombregenero");
 		spModificarGenero.setAdapter(adapterGenero);
 		spModificarGenero.setOnItemSelectedListener(this);
 		edtModificarPrecioVenta.setText(String.valueOf(juego.getPrecioJuego()));
